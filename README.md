@@ -1,6 +1,6 @@
 # Azure Stack HCI Insider Program
 
-This repo may be used by insiders to file issues and the HCI PM and SWE team can file bugs in ADO once they have been confirmed. This will provide a public forum to generate discussion and prevent the same issues from being reported. Insiders can see previous issues and provide additional comments, and we can provide status updates as we resolve these issues.
+This repo may be used by insiders to file issues. This will provide a public forum to generate discussion and prevent the same issues from being reported. Insiders can see previous issues and provide additional comments, and the HCI team can provide status updates as we resolve these issues.
 
 ## Contributing
 
