@@ -1,14 +1,6 @@
-# Project
+# Azure Stack HCI Insider Program
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
-
-As the maintainer of this project, please make a few updates:
-
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+> This repo may be used by insiders to file issues and the HCI PM and SWE team can file bugs in ADO once they have been confirmed. This will provide a public forum to generate discussion and prevent the same issues from being reported. Insiders can see previous issues and provide additional comments, and we can provide status updates as we resolve these issues.
 
 ## Contributing
 
