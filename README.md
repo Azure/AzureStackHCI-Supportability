@@ -4,7 +4,7 @@ This is a public repository for all of Azure Stack HCI Troubleshooting guides, k
 ## Table of Contents
 Troubleshooting guides are grouped by categories, and stored in relevantly named subdirectories; each directory containing a README the lists the commonly used and exposed guides through portal as recommendations during ticket creation process. The following are the categories of guides that are stored in reletantly named directories:
 
-* [Deployment](./TSG/Deployment/README.md) - Prerequisites, Active Directory, Software Download, OS install, Registration, Arc extensions and Deployment (Portal & ARM templates).
+* [Deployment](./TSG/Deployment/README.md) - Prerequisites, AD, Software Download, OS install, Registration, Arc extensions and Deployment (Portal & ARM templates).
 * [Update](./TSG/Update/README.md) - Health Check, SBE, Sideloading, Update method (Azure Update Manager & PowerShell).
 * [Infra Lifecycle Operations](./TSG/Lifecycle/README.md) - Add Server, Repair Server, Storage
 * [Arc VMs](./TSG/ArcVMs/README.md) - VM lifecycle management, licensing, extensions, networking and storage.
