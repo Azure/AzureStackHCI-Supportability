@@ -1,12 +1,12 @@
 # Azure Stack HCI Supportability platform
-This is a public repository for all of Azure Stack HCI Troubleshooting guides, known issues and reporting feedback - this repo is intended to provide a central location for community driven supportability content. This is the material that is reference by Customer Support Services when a ticket is created, by Azure Stack HCI engineering responding to an incident, and by users when self discoverying resolutions to active system issues.
+This is a public repository for all of Azure Stack HCI Troubleshooting guides, known issues and reporting feedback - this repo is intended to provide a central location for community driven supportability content. This is the material that is referenced by Customer Support Services when a ticket is created, by Azure Stack HCI engineering responding to an incident, and by users when self discovering resolutions to active system issues.
 
 ## Table of Contents
-Troubleshooting guides are grouped by categories, and stored in relevantly named subdirectories; each directory containing a README the lists the commonly used and exposed guides through portal as recommendations during ticket creation process. The following are the categories of guides that are stored in reletantly named directories:
+Troubleshooting guides are grouped by categories, and stored in relevantly named subdirectories; each directory containing a README the lists the commonly used and exposed guides through portal as recommendations during ticket creation process. The following are the categories of guides that are stored in relevantly named directories:
 
 * [Deployment](./TSG/Deployment/README.md) - Prerequisites, AD, Software Download, OS install, Registration, Arc extensions and Deployment (Portal & ARM templates).
 * [Update](./TSG/Update/README.md) - Health Check, SBE, Sideloading, Update method (Azure Update Manager & PowerShell).
-* [Infra Lifecycle Operations](./TSG/Lifecycle/README.md) - Add Server, Repair Server, Storage
+* [Infra Lifecycle Operations](./TSG/Lifecycle/README.md) - Add Server, Repair Server, Storage.
 * [Arc VMs](./TSG/ArcVMs/README.md) - VM lifecycle management, licensing, extensions, networking and storage.
 * [Security](./TSG/Security/README.md) - WDAC, BitLocker, Secret Rotation, Syslog, Defender for Cloud.
 * [Networking](./TSG/Networking/README.md) - Proxy and Arc Gateway.
