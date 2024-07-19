@@ -1,7 +1,4 @@
 # Azure Stack HCI Supportability
 
-This repo may be used by insiders to file issues. This will provide a public forum to generate discussion and prevent the same issues from being reported. Insiders can see previous issues and provide additional comments, and the HCI team can provide status updates as we resolve these issues.
-
-## Issue Reporting
-
-To file any issues that you identify, please go to the "Issues" tab and create a "New Issue". Please feel free to contribute to the discussion for any existing issues.
+# Azure Stack HCI Supportability platform
+This is a public repository for all of Azure Stack HCI Troubleshooting guides, known issues and reporting feedback - this repo is intended to provide a central location for community driven supportability content. This is the material that is reference by Customer Support Services when a ticket is created, by Azure Stack HCI engineering responding to an incident, and by users when self discoverying resolutions to active system issues.
