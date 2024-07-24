@@ -14,6 +14,37 @@ Troubleshooting guides are grouped by categories, and stored in relevantly named
 * [Azure Virtual Desktop](./TSG/AVD/README.md) - Azure Virtual Desktop.
 * [Azure Kubernetes](./TSG/AKS/README.md) - Deployment, Networking, Update.
 
+## Bug Reports
+
+> **IMPORTANT**: An inability to meet the below requirements for bug reports are subject to being closed by maintainers and routed to official Azure support channels to provide the proper support experience to resolve user issues.
+
+Bug reports filed on this repository should follow the default issue template that is shown when opening a new issue. The template contains the following fields:
+
+* Bug Description
+* Repro Steps
+* Expected Behavior
+* Environment
+  * Azure Stack HCI build (release version)
+  * 1-node vs. multi-nodes, etc.
+* Screenshots (if applicable)
+  
+At a bare minimum, issues reported on this repository must:
+
+1. Be reproducible outside of the current cluster
+
+* This means that if you file an issue that would require direct access to your cluster and/or Azure resources you will be redirected to open an Azure support ticket. Microsoft employees may not ask for personal / subscription information on Github.
+  * For example, if your issue is related to custom scenarios such as custom network devices, configuration, authentication issues related to your Azure subscription, etc.
+
+2. Contain the following information:
+
+* A good title: Clear, relevant and descriptive - so that a general idea of the problem can be grasped immediately
+* Description: Before you go into the detail of steps to replicate the issue, you need a brief description.
+  * Assume that whomever is reading the report is unfamiliar with the issue/system in question
+* Clear, concise steps to replicate the issue outside of your specific cluster.
+  * These should let anyone clearly see what you did to see the problem, and also allow them to recreate it easily themselves. This section should also include results - both expected and the actual - along with relevant URLs.
+* Be sure to include any supporting information you might have that could aid the developers.
+  * This includes YAML files/deployments, scripts to reproduce, exact commands used, screenshots, etc.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
