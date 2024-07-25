@@ -18,7 +18,7 @@ Troubleshooting guides are grouped by categories, and stored in relevantly named
 
 > **IMPORTANT**: An inability to meet the below requirements for bug reports are subject to being closed by maintainers and routed to official Azure support channels to provide the proper support experience to resolve user issues.
 
-Bug reports filed on this repository should follow the default issue template that is shown when opening a new issue. The template contains the following fields:
+Bug reports filed on this repository should follow the default issue template that is shown when opening a new issue. Please do not share any personal data. The template contains the following fields:
 
 * Bug Description
 * Repro Steps
@@ -26,7 +26,10 @@ Bug reports filed on this repository should follow the default issue template th
 * Environment
   * Azure Stack HCI build (release version)
   * 1-node vs. multi-nodes, etc.
-* Screenshots (if applicable)
+  * Production vs. Non-production
+  * Region
+* Screenshots (do not share personal data)
+* Correlation ID (from [log collection](https://learn.microsoft.com/azure-stack/hci/manage/get-support-for-deployment-issues#perform-standalone-log-collection))
   
 At a bare minimum, issues reported on this repository must:
 
