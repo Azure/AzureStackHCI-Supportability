@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+> **IMPORTANT**: Do not share any personal data in the bug report. This repository is a public forum and this report will also be public.
+
 **Bug description**
 A clear and concise description of what the bug is.
 
