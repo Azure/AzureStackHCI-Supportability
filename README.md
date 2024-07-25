@@ -1,8 +1,8 @@
 # Azure Stack HCI Supportability Forum
-This is a public repository for all of Azure Stack HCI Troubleshooting guides, known issues and reporting feedback - this repo is intended to provide a central location for community driven supportability content. This is the material that is referenced by Customer Support Services when a ticket is created, by Azure Stack HCI engineering responding to an incident, and by users when self discovering resolutions to active system issues.
+This is a public repository for all of Azure Stack HCI Troubleshooting guides (TSGs), known issues and reporting feedback - this repo is intended to provide a central location for community driven supportability content. This is the material that is referenced by Customer Support Services when a ticket is created, by Azure Stack HCI engineering responding to an incident, and by users when self discovering resolutions to active system issues.
 
 ## Table of Contents
-Troubleshooting guides are grouped by categories, and stored in relevantly named subdirectories; each directory containing a README the lists the commonly used and exposed guides through portal as recommendations during ticket creation process. The following are the categories of guides that are stored in relevantly named directories:
+Troubleshooting guides (TSGs) are grouped by categories, and stored in relevantly named subdirectories; each directory containing a README the lists the commonly used and exposed guides through portal as recommendations during ticket creation process. The following are the categories of guides that are stored in relevantly named directories:
 
 * [Deployment](./TSG/Deployment/README.md) - Prerequisites, AD, Software Download, OS install, Registration, Arc extensions and Deployment (Portal & ARM templates).
 * [Update](./TSG/Update/README.md) - Health Check, SBE, Sideloading, Update method (Azure Update Manager & PowerShell).
