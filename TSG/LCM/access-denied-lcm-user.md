@@ -21,7 +21,6 @@ Import-Module "ECEClient" 3>$null 4>$null
 Import-Module "C:\Program Files\WindowsPowerShell\Modules\Microsoft.AS.Infra.Security.SecretRotation\Microsoft.AS.Infra.Security.ActionPlanExecution.psm1" -DisableNameChecking
 
 # Convert the SecureString password to an encrypted standard string
-# This step may need adjustment depending on your actual encryption requirements
 $encryptedPassword = $credential.GetNetworkCredential().Password | Protect-CmsMessage -To "CN=DscEncryptionCert"
 
 # Validate credentials in ECE
