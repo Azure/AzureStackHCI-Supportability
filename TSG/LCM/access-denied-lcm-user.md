@@ -10,17 +10,19 @@ If you encounter an "Access Denied" error during deployment, update, or node add
 To mitigate the issue, the LCM user credentials need to be updated in the ECE store to match the credentials in Active Directory. To do this, run the powershell script provided in the [Update the LCM Credentials in the ECE Store](#Update-the-LCM-Credentials-in-the-ECE-Store) section below.
 
 ### Verify the ECE Store Contains the LCM Credentials
-Replace **\<user name\>** and **\<plain text password\>** with your LCM username and password, respectively. Run the following script in PowerShell:
+Run the following script in PowerShell. Input your LCM user credentials when prompted.
 
 ```
-$username = "<user name>"
-$password = "<plain text password>"
+# Prompt for credentials
+$credential = Get-Credential
 
+# Import necessary modules
 Import-Module "ECEClient" 3>$null 4>$null
 Import-Module "C:\Program Files\WindowsPowerShell\Modules\Microsoft.AS.Infra.Security.SecretRotation\Microsoft.AS.Infra.Security.ActionPlanExecution.psm1" -DisableNameChecking
 
-# Convert the plaintext password to a cms protected password
-$cmsProtectedPassword = $password | Protect-CmsMessage -To "CN=DscEncryptionCert"
+# Convert the SecureString password to an encrypted standard string
+# This step may need adjustment depending on your actual encryption requirements
+$encryptedPassword = $credential.GetNetworkCredential().Password | Protect-CmsMessage -To "CN=DscEncryptionCert"
 
 # Validate credentials in ECE
 $ValidateParams = @{
@@ -32,11 +34,11 @@ $ValidateParams = @{
     ActionPlanInstanceId = [Guid]::NewGuid()
 }
 $ValidateParams['RuntimeParameters'] = @{
-    UserName = $username
-    Password = $cmsProtectedPassword
+    UserName = $credential.GetNetworkCredential().UserName
+    Password = $encryptedPassword
 }
 
-Write-AzsSecurityVerbose -Message "Validating credentials in ECE. `r`nStarting action plan with Instance ID: $($ValidateParams.ActionPlanInstanceId)" -Verbose
+Write-AzsSecurityVerbose -Message "Validating credentials in ECE.`r`nStarting action plan with Instance ID: $($ValidateParams.ActionPlanInstanceId)" -Verbose
 $ValidateActionPlanInstance = Start-ActionPlan @ValidateParams 3>$null 4>$null
 
 if ($ValidateActionPlanInstance -eq $null)
@@ -56,26 +58,35 @@ elseif ($ValidateActionPlanInstance.Status -eq 'Completed')
 ### Update the LCM Credentials in the ECE Store
 To update the LCM user credentials in the ECE store, run the following PowerShell script with your updated LCM user credentials. Replace **\<user name\>** and **\<plain text password\>** with your LCM username and password, respectively:
 ```
-$username = "<user name>"
-$password = "<plain text password>"
+# Prompt for credentials
+$credential = Get-Credential
 
+# Import the necessary module
 Import-Module "C:\Program Files\WindowsPowerShell\Modules\Microsoft.AS.Infra.Security.SecretRotation\PasswordUtilities.psm1" -DisableNameChecking
 
-$securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
-$credential = New-Object -TypeName PSCredential -ArgumentList $username, $securePassword
-
-$eceStatus = (Get-ClusterGroup | where Name -eq "Azure Stack HCI Orchestrator Service Cluster Group").State
-if($eceStatus -ne "Online")
-{
+# Check the status of the ECE cluster group
+$eceClusterGroup = Get-ClusterGroup | Where-Object { $_.Name -eq "Azure Stack HCI Orchestrator Service Cluster Group" }
+if ($eceClusterGroup.State -ne "Online") {
     Write-AzsSecurityError -Message "ECE cluster group is not in an Online state. Cannot continue with password rotation." -ErrRecord $_
 }
 
 # Update ECE with the new password
 Write-AzsSecurityVerbose -Message "Updating password in ECE" -Verbose
-$ECEContainerstoUpdate = @("DomainAdmin", "DeploymentDomainAdmin", "SecondaryDomainAdmin", "TemporaryDomainAdmin", "BareMetalAdmin", "FabricAdmin", "SecondaryFabric", "CloudAdmin")
-foreach($containerName in $ECEContainerstoUpdate)
-{
+
+$ECEContainersToUpdate = @(
+    "DomainAdmin",
+    "DeploymentDomainAdmin",
+    "SecondaryDomainAdmin",
+    "TemporaryDomainAdmin",
+    "BareMetalAdmin",
+    "FabricAdmin",
+    "SecondaryFabric",
+    "CloudAdmin"
+)
+
+foreach ($containerName in $ECEContainersToUpdate) {
     Set-ECEServiceSecret -ContainerName $containerName -Credential $credential 3>$null 4>$null
 }
-Write-AzsSecurityVerbose -Message "Credentials successfully updated in ECE." -Verbose
+
+Write-AzsSecurityVerbose -Message "Finished updating credentials in ECE." -Verbose
 ```
