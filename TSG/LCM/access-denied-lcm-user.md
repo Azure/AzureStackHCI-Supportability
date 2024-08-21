@@ -55,7 +55,7 @@ elseif ($ValidateActionPlanInstance.Status -eq 'Completed')
 ```
 
 ### Update the LCM Credentials in the ECE Store
-To update the LCM user credentials in the ECE store. Input your LCM user credentials when prompted.
+To update the LCM user credentials in the ECE store, run the below script. Input your LCM user credentials when prompted.
 ```
 # Prompt for credentials
 $credential = Get-Credential
