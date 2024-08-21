@@ -6,6 +6,7 @@ Troubleshooting guides (TSGs) are grouped by categories, and stored in relevantl
 
 * [Deployment](./TSG/Deployment/README.md) - Prerequisites, AD, Software Download, OS install, Registration, Arc extensions and Deployment (Portal & ARM templates).
 * [Update](./TSG/Update/README.md) - Health Check, SBE, Sideloading, Update method (Azure Update Manager & PowerShell).
+* [LCM](./TSG/LCM/README.md) - Lifecycle Manager.
 * [Infra Lifecycle Operations](./TSG/Lifecycle/README.md) - Add Server, Repair Server, Storage.
 * [Arc VMs](./TSG/ArcVMs/README.md) - VM lifecycle management, licensing, extensions, networking and storage.
 * [Security](./TSG/Security/README.md) - WDAC, BitLocker, Secret Rotation, Syslog, Defender for Cloud.
