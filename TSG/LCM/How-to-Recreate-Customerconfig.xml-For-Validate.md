@@ -1,16 +1,17 @@
-# How-to-Recreate-Customerconfig.xml-For-Validate
+# How-to-Recreate-Customerconfig.xml-For-Environment-Validator
 # Description 
 ## Do not use this TSG if a deployment action has been started
-This article describes how to bring back the customer configuration if it was removed and not recreated during the validate action flow.
+This article describes how to bring back the customer configuration if it was removed and not recreated during the environment validator action flow.
 # Symptoms
 ## Expected Occurance 
 This issue is expected to happen when certain conditions are met. When a validation call is triggered and fails, and then a second validation call is triggered. You will likely see this issue. This is due to the seconds validation call trying to clean up the state of the first validation call but something is locking a file that needs to be cleaned up in the ECE store. So the script fails to clean up and throws an error before the ECEstore can be recreated.
 ## Signature 
-On a re-run of the validate action the action is unable to be launched and an error like ```Item 'CustomerConfiguration.xml' not found in store 'Default'. The file path is C:\EceStore\efb61d70-47ed-8f44-5d63-bed6adc0fb0f\0b8ae09e-3e34-bd06-78a3-28c0d0d425ca ```.
+On a re-run of the environment validator action the action is unable to be launched and an error like ```Item 'CustomerConfiguration.xml' not found in store 'Default'. The file path is C:\EceStore\efb61d70-47ed-8f44-5d63-bed6adc0fb0f\0b8ae09e-3e34-bd06-78a3-28c0d0d425ca ```.
 # Mitigation 
-These steps will only mitigate a single run of validation until a RCA is discovered and a fix is provided. These steps may have to be run after every validate action.
-1) Stop the LCM service ``` Stop-service LCMController ```
-2) Delete the regkey ``` HKLM:\Software\Microsoft\LCMAzureStackStampInformation\InitializationComplete ```
-3) Start the LCM service ``` Start-Service LCMController ```
-4) Wait until LCM initialization completes. This can be check by looking in the latest ```C:\MasLogs\LCMECELitelogs\InitializeDeploymentService-date.log.``` The last line in the file should say ``` Action: Action plan 'InitializeDeploymentService' completed. ``` This action takes about 15-20 minutes to complete
-5) A new validate action can now be sent
+These steps will only mitigate a single run of validation until a RCA is discovered and a fix is provided. These steps may have to be run after every environment validator action.
+1) Run log collection ``` send-diagnostics ```
+2) Stop the LCM service ``` Stop-service LCMController ```
+3) Delete the regkey ``` HKLM:\Software\Microsoft\LCMAzureStackStampInformation\InitializationComplete ```
+4) Start the LCM service ``` Start-Service LCMController ```
+5) Wait until LCM initialization completes. This can be check by looking in the latest ```C:\MasLogs\LCMECELitelogs\InitializeDeploymentService-date.log.``` The last line in the file should say ``` Action: Action plan 'InitializeDeploymentService' completed. ``` This action takes about 15-20 minutes to complete
+6) A new environment validator action can now be sent
