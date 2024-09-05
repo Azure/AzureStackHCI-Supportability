@@ -15,20 +15,7 @@ These steps will only mitigate a single run of validation until a RCA is discove
 **Run the following steps on the seed node**
 1) Run the below code block to re-init LCM on the seed node.
 ``` 
-$ErrorActionPreference = "stop"
-import-module C:\CloudDeployment\ECEngine\EnterpriseCloudEngine.psd1  -ErrorAction stop
-$act = Get-ActionProgress -ActionType "CloudDeployment" -ErrorAction stop
-if ($null -ne $act)
-{
-    throw "Deployment action started do not proceed with this tsg"
-}
-else
-{
-    Write-Host "Applying TSG to delete reg key to re-initialize LCM Controller"
-    Remove-ItemProperty -Path "HKLM:\Software\Microsoft\LCMAzureStackStampInformation" -Name InitializationComplete -ErrorAction stop -Force
-}
-
-
+$ErrorActionPreference = "stop"; import-module C:\CloudDeployment\ECEngine\EnterpriseCloudEngine.psd1  -ErrorAction stop; $act = Get-ActionProgress -ActionType "CloudDeployment" -ErrorAction stop; if ($null -ne $act){ throw "Deployment action started do not proceed with this tsg" } else {    Write-Host "Applying TSG to delete reg key to re-initialize LCM Controller"; Remove-ItemProperty -Path "HKLM:\Software\Microsoft\LCMAzureStackStampInformation" -Name InitializationComplete -ErrorAction stop -Force }
 ```
 2) Restart the the host
 4) Wait until LCM initialization completes. This can be check by looking in the latest ```C:\MasLogs\LCMECELitelogs\InitializeDeploymentService-date.log.``` The last line in the file should say ``` Action: Action plan 'InitializeDeploymentService' completed. ``` This action takes about 15-20 minutes to complete
