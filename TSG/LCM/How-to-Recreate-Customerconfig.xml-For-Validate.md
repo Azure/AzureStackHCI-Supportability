@@ -29,6 +29,6 @@ else
 
 
 ```
-2) Restart the LCM service ``` Restart-Service LCMController ```
+2) Restart the the host
 4) Wait until LCM initialization completes. This can be check by looking in the latest ```C:\MasLogs\LCMECELitelogs\InitializeDeploymentService-date.log.``` The last line in the file should say ``` Action: Action plan 'InitializeDeploymentService' completed. ``` This action takes about 15-20 minutes to complete
 5) Re-run environment validation from portal
