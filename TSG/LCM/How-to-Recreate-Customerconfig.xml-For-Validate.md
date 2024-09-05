@@ -12,7 +12,8 @@ On a re-run of the environment validator action the action is unable to be launc
 # Mitigation 
 These steps will only mitigate a single run of validation until a RCA is discovered and a fix is provided. These steps may have to be run after every environment validator action.
 
-1) Run the below code block to re-init LCM.
+**Run the following steps on the seed node**
+1) Run the below code block to re-init LCM on the seed node.
 ``` 
 $ErrorActionPreference = "stop"
 import-module C:\CloudDeployment\ECEngine\EnterpriseCloudEngine.psd1  -ErrorAction stop
