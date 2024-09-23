@@ -64,7 +64,7 @@ $credential = Get-Credential
 Import-Module "C:\Program Files\WindowsPowerShell\Modules\Microsoft.AS.Infra.Security.SecretRotation\PasswordUtilities.psm1" -DisableNameChecking
 
 # Validate that the username provided by customer is of the correct format. Username should be provided without domain and not contain any special characters.
-ValidateIdentity -Username $Identity
+ValidateIdentity -Username $credential.UserName
 
 # Check the status of the ECE cluster group
 $eceClusterGroup = Get-ClusterGroup | Where-Object { $_.Name -eq "Azure Stack HCI Orchestrator Service Cluster Group" }
