@@ -59,7 +59,7 @@ As each solution extension is executing partner authored logic, the extension ma
 ## SBE Bootstrap Flow
 If there is a failure with SBE in the bootstrap process see the below diagram for the high level flow.
 
-![SBE-bootstrap-flow.png](/.attachments/SBE-bootstrap-flow-c24902db-e747-434d-90d9-c872b71ab42c.png)
+![SBE-bootstrap-flow.png](./images/sbe-bootstrap-flow.png)
 
 ## SBE Deployment Flow
 The SBE package is in several ways between the end of bootstrap until the end of deployment. See below for a high level overview.
@@ -158,7 +158,8 @@ Key takeways from the above message:
 - Because this is a `Microsoft.HardwareUpdatePlugin` is referenced we know there will be at least 1 more layer of details available by checking the `c:\Observability\OEMDiagnostics\*.etl` files. You can use an approparite ETL log viewer or use `Get-ASEvent` to view such files as discussed above. 
 
 **Note:** SBE steps use the numerical index to control the order plugins are called.  If you check the infra share at `...cloudmedia\SBE\Installed\Content\CAUPlugins` there will be directories called `01` and other numbers as shown below. The index controls the order, so without looking any further, the `(2)` in the message above would indicate the failure is with the plugin defined in the `02-Custom` directory.
-![image.png](/.attachments/image-205b0530-0253-45f3-9591-e201fc8194c5.png)
+
+![sbe-cauplugins-example-dir.png](./images/sbe-cauplugins-example-dir.png)
 
 If the failure occurs in the plugin this is typically an issue with plugin automation, the payload being installed (e.g. FW or drivers files), or a BMC configuration error (e.g. Many SBE CAU plugins rely on the BMC USB pass-through NIC to install firmware). The correction of any of these issues will likely require support engagement with SBE publisher (the hardware vendor) to resolve, but you may be able to find the root cause or at least identify a documented known issue by looking at the `c:\Observability\OEMDiagnostics\*.etl` files if the failure is with the `Microsoft.HardwareUpdatePlugin`.
 
