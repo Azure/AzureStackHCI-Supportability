@@ -1,5 +1,5 @@
 # Symptoms
-After upgrading the Azure Stack HCI OS from 22H2 to 23H2, customers may notice a 'Partitioned' network in their environment.
+After upgrading the Azure Local OS from 22H2 to 23H2, customers may notice a 'Partitioned' network in their environment.
 
 # Issue Validation
 Run `Get-ClusterNetwork` from one of the nodes and view the output.  You may see a network as 'Partitioned'.  
