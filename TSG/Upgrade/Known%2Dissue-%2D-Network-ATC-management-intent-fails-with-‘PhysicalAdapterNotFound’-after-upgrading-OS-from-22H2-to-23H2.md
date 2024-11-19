@@ -9,7 +9,7 @@ Run `Get-NetAdapter` from the node that was upgraded to 23H2.  The adapter will 
 Run `Get-VMNetworkAdapter -ManagementOS`.  The adapter will be named `vManagement(IntentName)` which **IS** the name Network ATC is expecting for this adapter.
 
 # Cause
-This is a known issue when installing the feature update for Azure Stack HCI version 23H2.
+This is a known issue when installing the feature update for Azure Local version 23H2.
 
 # Mitigation Details
 To fix this issue, rename the management vNIC back to the name expected by Network ATC using the steps below on each host:
