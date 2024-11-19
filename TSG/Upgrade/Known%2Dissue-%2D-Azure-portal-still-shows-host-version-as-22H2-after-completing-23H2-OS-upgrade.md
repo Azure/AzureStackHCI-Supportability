@@ -1,5 +1,5 @@
 # Symptoms
-The Azure portal may still reflect the OS on the node to be Azure Stack HCI 22H2 even though the 23H2 upgrade has been completed.
+The Azure portal may still reflect the OS on the node to be Azure Local, version 22H2 even though the 23H2 upgrade has been completed.
 
 # Issue Validation
 In the Azure portal, navigate to either the cluster overview page or the node-specific page within Machine - Azure Arc.  The operating system version may still be reflected at 10.20349.X.X (22H2).
