@@ -1,6 +1,8 @@
 # Azure Local Supportability Forum
 This is a public repository for all of Azure Local Troubleshooting guides (TSGs), known issues and reporting feedback - this repo is intended to provide a central location for community driven supportability content. This is the material that is referenced by Customer Support Services when a ticket is created, by Azure Local engineering responding to an incident, and by users when self discovering resolutions to active system issues.
 
+_Azure Stack HCI is now part of Azure Local. [Learn more](https://aka.ms/azloc-promo)._ 
+
 ## Table of Contents
 Troubleshooting guides (TSGs) are grouped by categories and stored in relevantly named subdirectories. Each directory contains a README that lists the guides. The following are the categories of guides that are stored in relevantly named directories:
 
