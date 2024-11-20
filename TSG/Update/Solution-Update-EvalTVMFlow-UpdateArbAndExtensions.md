@@ -55,7 +55,7 @@ if (($accountsModule -ne $null) -and ($accountsModule.Version -gt $accountsModul
 $resourcesModule = Get-InstalledModule Az.Resources;
 $resourcesModuleDesiredVersion = "6.12.0";
 
-if (($resourcesModule -ne $null) -and ($resourcesModule.Version -gt "6.12.0"))
+if (($resourcesModule -ne $null) -and ($resourcesModule.Version -gt $resourcesModuleDesiredVersion))
 {
 	Uninstall-Module -Name Az.Resources -RequiredVersion $resourcesModule.Version -Force;
 	Write-Host "Uninstalled Az.Resources, Version: $resourcesModule.Version";	
@@ -66,7 +66,7 @@ if (($resourcesModule -ne $null) -and ($resourcesModule.Version -gt "6.12.0"))
 $connectedMachineModule = Get-InstalledModule Az.ConnectedMachine;
 $connectedMachineModuleDesiredVersion = "0.8.0";
 
-if (($connectedMachineModule -ne $null) -and ($resourcesModule.Version -gt "6.12.0"))
+if (($connectedMachineModule -ne $null) -and ($resourcesModule.Version -gt $connectedMachineModuleDesiredVersion))
 {
 	Uninstall-Module -Name Az.ConnectedMachine -RequiredVersion $connectedMachineModule.Version -Force;
 	Write-Host "Uninstalled Az.ConnectedMachine, Version: $connectedMachineModule.Version";	
