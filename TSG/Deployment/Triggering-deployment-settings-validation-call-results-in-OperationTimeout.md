@@ -1,11 +1,11 @@
 
-**Symptoms**
+# Symptoms
   
 When deploying a new 23h2 cluster based on the newly available 2411 image, there may be occurrences where you will experience a timeout while initiating the validation process "**Triggering deployment settings validation call....**"
 
 
 
-**Issue Validation**  
+# Issue Validation
 To confirm the scenario that you are encountering is the issue documented in this article, please confirm that you see a similar error as showed below:
 
 "**Could not complete the operation. 200: OperationTimeout , No updates received from device for oeration (...) beyond timeout of [600000] ms**.
@@ -14,10 +14,10 @@ To confirm the scenario that you are encountering is the issue documented in thi
 <img width="392" alt="Picture1" src="https://github.com/user-attachments/assets/82dc34cf-034b-44bc-a982-2186244da046">
 
 
-**Cause**  
+# Cause
 The issue has been identified and the permanent mitigation will be offered in a future LCM extension version. **The current workaround is to make sure that all the nodes are set to time zone "UTC"**.
 
-**Mitigation Details**  
+# Mitigation Details
 
 ```
 1.  Log into each of the HCI nodes and change the time zone to UTC using the command `Set-TimeZone -Id "UTC"`, then reboot the nodes.
