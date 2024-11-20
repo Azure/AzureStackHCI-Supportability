@@ -66,7 +66,7 @@ if (($resourcesModule -ne $null) -and ($resourcesModule.Version -gt $resourcesMo
 $connectedMachineModule = Get-InstalledModule Az.ConnectedMachine;
 $connectedMachineModuleDesiredVersion = "0.8.0";
 
-if (($connectedMachineModule -ne $null) -and ($resourcesModule.Version -gt $connectedMachineModuleDesiredVersion))
+if (($connectedMachineModule -ne $null) -and ($connectedMachineModule.Version -gt $connectedMachineModuleDesiredVersion))
 {
 	Uninstall-Module -Name Az.ConnectedMachine -RequiredVersion $connectedMachineModule.Version -Force;
 	Write-Host "Uninstalled Az.ConnectedMachine, Version: $connectedMachineModule.Version";	
