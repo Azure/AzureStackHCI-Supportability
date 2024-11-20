@@ -1,5 +1,5 @@
-# Azure Stack HCI Supportability Forum
-This is a public repository for all of Azure Stack HCI Troubleshooting guides (TSGs), known issues and reporting feedback - this repo is intended to provide a central location for community driven supportability content. This is the material that is referenced by Customer Support Services when a ticket is created, by Azure Stack HCI engineering responding to an incident, and by users when self discovering resolutions to active system issues.
+# Azure Local Supportability Forum
+This is a public repository for all of Azure Local Troubleshooting guides (TSGs), known issues and reporting feedback - this repo is intended to provide a central location for community driven supportability content. This is the material that is referenced by Customer Support Services when a ticket is created, by Azure Local engineering responding to an incident, and by users when self discovering resolutions to active system issues.
 
 ## Table of Contents
 Troubleshooting guides (TSGs) are grouped by categories and stored in relevantly named subdirectories. Each directory contains a README that lists the guides. The following are the categories of guides that are stored in relevantly named directories:
@@ -26,18 +26,18 @@ Bug reports filed on this repository should follow the default issue template th
 * Repro Steps
 * Expected Behavior
 * Environment
-  * Azure Stack HCI build (release version)
+  * Azure Local build (release version)
   * 1-node vs. multi-nodes, etc.
   * Production vs. Non-production
   * Region
 * Screenshots (do not share personal data)
-* Correlation ID (from [log collection](https://learn.microsoft.com/azure-stack/hci/manage/get-support-for-deployment-issues#perform-standalone-log-collection))
+* Correlation ID (from [log collection](https://learn.microsoft.com/azure/azure-local/manage/get-support-for-deployment-issues#perform-standalone-log-collection))
   
 At a bare minimum, issues reported on this repository must:
 
-1. Be reproducible outside of the current cluster
+1. Be reproducible outside of the current system
 
-* This means that if you file an issue that would require direct access to your cluster and/or Azure resources you will be redirected to open an Azure support ticket. Microsoft employees may not ask for personal / subscription information on Github.
+* This means that if you file an issue that would require direct access to your system and/or Azure resources you will be redirected to open an Azure support ticket. Microsoft employees may not ask for personal / subscription information on Github.
   * For example, if your issue is related to custom scenarios such as custom network devices, configuration, authentication issues related to your Azure subscription, etc.
 
 2. Contain the following information:
@@ -45,7 +45,7 @@ At a bare minimum, issues reported on this repository must:
 * A good title: Clear, relevant and descriptive - so that a general idea of the problem can be grasped immediately
 * Description: Before you go into the detail of steps to replicate the issue, you need a brief description.
   * Assume that whomever is reading the report is unfamiliar with the issue/system in question
-* Clear, concise steps to replicate the issue outside of your specific cluster.
+* Clear, concise steps to replicate the issue outside of your specific system.
   * These should let anyone clearly see what you did to see the problem, and also allow them to recreate it easily themselves. This section should also include results - both expected and the actual - along with relevant URLs.
 * Be sure to include any supporting information you might have that could aid the developers.
   * This includes YAML files/deployments, scripts to reproduce, exact commands used, screenshots, etc.

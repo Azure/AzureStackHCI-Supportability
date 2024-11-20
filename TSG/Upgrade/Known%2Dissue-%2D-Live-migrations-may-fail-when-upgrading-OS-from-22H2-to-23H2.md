@@ -1,4 +1,4 @@
-During the upgrade of Azure Stack HCI 22H2 to 23H2, customers may see that live migrations start failing.  If customers are upgrading via Cluster Aware Updating (CAU), this will result in a failed CAU run as live migrations will eventually start to fail. 
+During the upgrade of Azure Local 22H2 to 23H2, customers may see that live migrations start failing.  If customers are upgrading via Cluster Aware Updating (CAU), this will result in a failed CAU run as live migrations will eventually start to fail. 
 
 # Symptoms
 Live migrations will not complete.  These may hang at a certain percentage, or they may stay queued.  CAU may fail due to the node failing to drain.
