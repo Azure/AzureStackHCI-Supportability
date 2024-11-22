@@ -11,7 +11,8 @@ To confirm the scenario that you are encountering is the issue documented in thi
 "**Could not complete the operation. 200: OperationTimeout , No updates received from device for oeration (...) beyond timeout of [600000] ms**.
 
 
-<img width="392" alt="Picture1" src="https://github.com/user-attachments/assets/82dc34cf-034b-44bc-a982-2186244da046">
+<img width="400" alt="Items" src="https://github.com/user-attachments/assets/4a397318-7d01-4674-9db5-e406fc15a0fe">
+
 
 
 # Cause
