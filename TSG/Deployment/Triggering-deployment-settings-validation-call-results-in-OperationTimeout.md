@@ -20,7 +20,7 @@ The issue has been identified and the permanent mitigation will be offered in a 
 # Mitigation Details
 
 ```
-1.  Log into each of the HCI nodes and change the time zone to UTC using the command `Set-TimeZone -Id "UTC"`, then reboot the nodes.
+1.  Log into each of the Azure Local nodes and change the time zone to UTC using the command `Set-TimeZone -Id "UTC"`, then reboot the nodes.
 
 2.  Once they are up, make sure LCM service is running using the command `Get-Service LcmController` as shown in the example below.  
     
