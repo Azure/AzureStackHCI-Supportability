@@ -1,7 +1,8 @@
 This troubleshooting guide will assist engineers with the basics of troubleshooting for SBE during bootstrap, deployment, and update.
 
 # Introduction
-Starting with Azure Stack HCI 23H2, HCI introduced the Lifecycle Manager (LCM) to orchestrate deployment and updates of the full solution using a **solution update** composed of the following components to implement a recipe to consistently deploy and update the solution:
+Starting with version 23H2, Azure Local introduced the Lifecycle Manager (LCM) to orchestrate deployment and updates of the full solution using a **solution update** composed of the following components to implement a recipe to consistently deploy and update the solution:
+
 * [Solution Builder Extension (SBE)](https://learn.microsoft.com/en-us/azure-stack/hci/update/solution-builder-extension) – A special type of solution extension provided by the server hardware vendor or system integrator (aka the Solution Builder) to provide updates for firmware, drivers, and other Hardware vendor specific tools.  See https://learn.microsoft.com/en-us/azure-stack/hci/update/solution-builder-extension for details.
 * Platform Updates – OS and Security Updates
 * Services Updates – Agents and services updates including LCM component updates
@@ -10,7 +11,8 @@ For general details on how solution extensions fits in with the other components
 https://learn.microsoft.com/en-us/azure-stack/hci/update/about-updates-23h2#whats-in-the-update-package) for details.
 
 ## SBE Related Term Definitions
-* **Solution Extension** - A package consisting of 2 XML files (manifest and metadata) and a zip payload file. Used to provide constent way for partners to extend the HCI solution.
+* **Solution Extension** - A package consisting of 2 XML files (manifest and metadata) and a zip payload file. Used to provide consistent way for partners to extend the Azure Local solution.
+
 * **Solution Extension Discovery Manifest XML** - A signed multi-entry manifest that describes each partner solution extension release to date.  Used by LCM to establish trust for the zip file (XML is signed and has packageHash for zip file) and applicability rules used to discover which extension is a match for a specific model system and a specific solution update version.
 * **Solution Extension metadata XML** - A signed metadata file that tracks expected contents of the zip file including a software BOM. Used to perform file integrity checks after extension zip file is expanded.
 * **Solution Extension ZIP** - The zip file containing the extension content from the partner. See Solution Extension Zip Contents section below.
