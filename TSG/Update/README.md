@@ -4,3 +4,4 @@
 * [Solution update (PNU) fails with InstallRemoteSupportArcExtension installation failed](./PNU-fails-with-InstallRemoteSupportArcExtension-installation-failed.md)
 * [2408 -> 2408.x update fails on task "Grant computer object permissions to cluster" with Access is denied](./Update-fails-on-task-Grant-computer-object-permissions-to-cluster-with-Access-is-denied.md)
 * [Solution update fails at EvalTVMFlow or UpdateArbAndExtensions](./Solution-Update-EvalTVMFlow-UpdateArbAndExtensions.md)
+* [Update fails at VersionControl UpdatePowerShellModules](./Update-fails-at-VersionControl-UpdatePowerShellModules.md)
