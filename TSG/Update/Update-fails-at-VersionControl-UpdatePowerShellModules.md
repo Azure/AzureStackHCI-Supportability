@@ -1,5 +1,4 @@
 ---
-author: alexbass@microsoft.com, kagoyal@microsoft.com
 ---
 
 10.2411.0.24 update failure in the VersionControl UpdatePowerShellModules interface.
