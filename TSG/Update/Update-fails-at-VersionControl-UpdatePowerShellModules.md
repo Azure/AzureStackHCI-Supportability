@@ -1,6 +1,3 @@
----
----
-
 10.2411.0.24 update failure in the VersionControl UpdatePowerShellModules interface.
 
 # Symptoms
