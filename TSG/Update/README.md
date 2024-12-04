@@ -5,3 +5,4 @@
 * [2408 -> 2408.x update fails on task "Grant computer object permissions to cluster" with Access is denied](./Update-fails-on-task-Grant-computer-object-permissions-to-cluster-with-Access-is-denied.md)
 * [Solution update fails at EvalTVMFlow or UpdateArbAndExtensions](./Solution-Update-EvalTVMFlow-UpdateArbAndExtensions.md)
 * [Update fails at VersionControl UpdatePowerShellModules](./Update-fails-at-VersionControl-UpdatePowerShellModules.md)
+* [Mitigation for 'Cannot remove item C:\UpdateDistribution' with access denied](./mitigation-for-cannot-remove-c-update-distribution-with-access-denied.md)
