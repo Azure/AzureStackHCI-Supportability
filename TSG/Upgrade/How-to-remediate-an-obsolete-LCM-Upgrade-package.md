@@ -31,10 +31,13 @@ $actionDeployExists = Test-Path "C:\ECEStore\efb61d70-47ed-8f44-5d63-bed6adc0fb0
 $actionUpgradeExists= Test-Path "C:\EceStore\efb61d70-47ed-8f44-5d63-bed6adc0fb0f\4aa0e19d-e6b7-31be-bcd0-250ea438567f"
 if ($actionDeployExists -or $actionUpgradeExists) { throw "An action started do not proceed with this tsg" } else { Write-Host "Applying TSG to clean up obsolete LCM deployment package"; $lcmServiceNugetNameToExclude = "Microsoft.AzureStack.Solution.LCMControllerWinService"; $lcmRoleNugetNameToExclude = "Microsoft.AzureStack.Role.Deployment.Service"; $nugetsToRemove = Get-ChildItem -Path $(Join-Path $env:SystemDrive "NugetStore")  -ErrorAction Ignore | where { $_.FullName -notmatch $lcmRoleNugetNameToExclude -and $_.FullName -notmatch $lcmServiceNugetNameToExclude }; $nugetsToRemove | Remove-Item -Force -Recurse;if (Test-Path C:\CloudDeployment){    Write-Host "CloudDeployment folder found removing";    Remove-Item C:\CloudDeployment -Force -Recurse;}else {    Write-Host "CloudDeployment folder not found continuing";} $status = Get-ItemProperty -Path "HKLM:\Software\Microsoft\LCMAzureStackStampInformation" -Name InitializationComplete -ErrorAction Ignore;if ($null -eq $status){    Write-Host "Initialization Complete Reg key not found. Skipping removal of this key. Continue with the tsg";}else {    Write-Host "Initialization Complete Reg key found removing key";    Remove-ItemProperty -Path "HKLM:\Software\Microsoft\LCMAzureStackStampInformation" -Name InitializationComplete -ErrorAction stop -Force; }}
 ```
-4. Run the commands
+4. Reboot the Node and Start LCM Controller Service
 ```
-Restart-Service Bits
-Start-Service LCMController
+a) Suspend-ClusterNode -Name "MachineName" -Drain
+b) Restart-Computer -Force
+c) Resume-ClusterNode -Name "MachineName"
+d) Verify storage pool health: Get-StoragePool -FriendlyName "StoragePoolName"
+e) Start-Service LCMController
 ```
 
 5. Wait until LCM initialization completes. You can use the script below to poll the completion of the initialization. This action takes about 15-20 minutes to complete
